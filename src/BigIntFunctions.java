@@ -1,11 +1,22 @@
 import java.math.BigInteger;
 
-public class BigIntExtension
+//***************************************************************************************************//
+// Pure static class that includes functions for BigInteger. Notably modular exponentiation which    //
+// is used to check if a large number is prime.                                                      //
+// Last edited 1-4-26                                                                                //
+//***************************************************************************************************//
+public class BigIntFunctions
 {
     //***********************************************************************************************//
-    //                               static functions for BigInteger                                 //
+    //                   private constructor, prevents class from being initialized                  //
     //***********************************************************************************************//
+    private BigIntFunctions() { /* do nothing */ }
 
+
+
+    //***********************************************************************************************//
+    //                                        static functions                                       //
+    //***********************************************************************************************//
     //Modular Exponentiation
     //Base^Exp % Mod
     //iterative version, works for large inputs
@@ -76,7 +87,6 @@ public class BigIntExtension
             return Integer.MAX_VALUE;
         return Num.intValue();
     }
-
 
     //IsEven function for BigInteger
     static public boolean IsEven(BigInteger Num)

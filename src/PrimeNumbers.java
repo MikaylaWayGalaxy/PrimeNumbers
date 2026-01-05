@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-//***********************************************************************************************//
-// Created by Mikayla Fulmer                                                                     //
-// Last edited 12-24-25                                                                          //
-//                                                                                               //
-// Large prime number generator based on PurpleMind's Youtube video.                             //
-// https://www.youtube.com/watch?v=tBzaMfV94uA                                                   //
-//***********************************************************************************************//
+//***************************************************************************************************//
+// Created by Mikayla Fulmer                                                                         //
+// Last edited 12-24-25                                                                              //
+//                                                                                                   //
+// Large prime number generator based on PurpleMind's Youtube video.                                 //
+// https://www.youtube.com/watch?v=tBzaMfV94uA                                                       //
+//***************************************************************************************************//
 public class PrimeNumbers
 {
     static public void main(String[] args)

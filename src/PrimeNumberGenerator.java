@@ -1,6 +1,10 @@
 import java.math.BigInteger;
 import static java.lang.Math.pow;
 
+//***************************************************************************************************//
+// Prime number generator that uses Java's BigInteger class to store the large numbers.              //
+// Last edited 12-24-25                                                                              //
+//***************************************************************************************************//
 public class PrimeNumberGenerator
 {
     //***********************************************************************************************//
@@ -56,7 +60,6 @@ public class PrimeNumberGenerator
     //***********************************************************************************************//
     //                                      public member functions                                  //
     //***********************************************************************************************//
-
     //generate and return a prime number using the Miller-Rabin test
     //takes in number of digits the prime should be in base ten
     //overwrites Number and Certainty member variables
@@ -68,7 +71,7 @@ public class PrimeNumberGenerator
         //generate random number and loop until it's most likely prime
         do
         {
-            Number = RNG.nDigitOddNumber(NumDigits);
+            Number = RNG.nDigitNumber1379(NumDigits);
             System.out.println("Current iteration: " + ++Iteration + " Expected: " + Expected);
         }while(!IsPrime());
 
@@ -85,14 +88,13 @@ public class PrimeNumberGenerator
     //***********************************************************************************************//
     //                                      private member functions                                 //
     //***********************************************************************************************//
-
     //Miller-Rabin test
     //repeatedly apply Miller's test to have a high certainty a number is prime
     //takes in how many different bases to check
     private boolean MillerRabinTest(int Check)
     {
         BigInteger RandNum;
-        int Bound = BigIntExtension.ToInteger(Number.subtract(BigInteger.ONE));
+        int Bound = BigIntFunctions.ToInteger(Number.subtract(BigInteger.ONE));
 
         for (int i = 0; i < Check; i++)
         {
@@ -122,18 +124,18 @@ public class PrimeNumberGenerator
 
         //Fermat's Test
         //Make sure Base^(Exp) % PrimeCand == 1
-        if (!(BigIntExtension.ModExp(Base, Exp, PrimeCand).equals(BigInteger.ONE)))   //if false, then PrimeCand is composite
+        if (!(BigIntFunctions.ModExp(Base, Exp, PrimeCand).equals(BigInteger.ONE)))   //if false, then PrimeCand is composite
             return false;
 
         //Miller's Test
         do
         {
-            Test = BigIntExtension.ModExp(Base, Exp, PrimeCand);                    //calculate Base^(Exp) % PrimeCand
+            Test = BigIntFunctions.ModExp(Base, Exp, PrimeCand);                    //calculate Base^(Exp) % PrimeCand
             if(OneFlag && !Test.equals(BigInteger.ONE) && !Test.equals(PMinus1))    //if the previous iteration was 1 and the current doesn't equal 1 or PMinus1, then PrimeCand is composite
                 return false;
             OneFlag = Test.equals(BigInteger.ONE);                                  //reset OneFlag
             Exp = Exp.divide(BigInteger.valueOf(2));                                //divide Exp by 2
-        }while(BigIntExtension.IsEven(Exp));                                        //loop until Exp becomes odd
+        }while(BigIntFunctions.IsEven(Exp));                                        //loop until Exp becomes odd
 
         return true;            //if reached, Miller's test passes for this base
     }
