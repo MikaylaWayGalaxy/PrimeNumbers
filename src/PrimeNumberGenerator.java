@@ -65,14 +65,10 @@ public class PrimeNumberGenerator
     //overwrites Number and Certainty member variables
     public BigInteger GeneratePrime(int NumDigits)
     {
-        int Iteration = 0;                                                  //iteration counter to track how long it took to generate this prime
-        int Expected = (int)Math.ceil(Math.log(10) * NumDigits / 2.0);      //expected number of iterations for a given number of digits, from prime number theorem
-
-        //generate random number and loop until it's most likely prime
+        //generate random number and loop until it's almost certainly prime
         do
         {
             Number = RNG.nDigitNumber1379(NumDigits);
-            System.out.println("Current iteration: " + ++Iteration + " Expected: " + Expected);
         }while(!IsPrime());
 
         return Number;
