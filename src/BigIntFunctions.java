@@ -1,11 +1,22 @@
 import java.math.BigInteger;
 
-public class BigIntExtension
+//***************************************************************************************************//
+// Pure static class that includes functions for BigInteger. Most importantly modular exponentiation //
+// which is used to check if a large number is prime.                                                //
+// Last edited 1-4-26                                                                                //
+//***************************************************************************************************//
+public class BigIntFunctions
 {
     //***********************************************************************************************//
-    //                               static functions for BigInteger                                 //
+    //                   private constructor, prevents class from being initialized                  //
     //***********************************************************************************************//
+    private BigIntFunctions() { /* do nothing */ }
 
+
+
+    //***********************************************************************************************//
+    //                                        static functions                                       //
+    //***********************************************************************************************//
     //Modular Exponentiation
     //Base^Exp % Mod
     //iterative version, works for large inputs
@@ -77,7 +88,6 @@ public class BigIntExtension
         return Num.intValue();
     }
 
-
     //IsEven function for BigInteger
     static public boolean IsEven(BigInteger Num)
     {
@@ -85,11 +95,11 @@ public class BigIntExtension
     }
 
     //checks if input is within the signed integer size limit
+    //only checks if Num is too large, not too small
     static public boolean InsideSizeLimit(BigInteger Num)
     {
         return (Num.compareTo(BigInteger.valueOf(Integer.MAX_VALUE)) <= 0);
     }
-    //todo: update for negative numbers
 
     //checks if input is outside the signed integer size limit
     static public boolean OutsideSizeLimit(BigInteger Num)
