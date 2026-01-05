@@ -1,8 +1,8 @@
 import java.math.BigInteger;
 
 //***************************************************************************************************//
-// Pure static class that includes functions for BigInteger. Notably modular exponentiation which    //
-// is used to check if a large number is prime.                                                      //
+// Pure static class that includes functions for BigInteger. Most importantly modular exponentiation //
+// which is used to check if a large number is prime.                                                //
 // Last edited 1-4-26                                                                                //
 //***************************************************************************************************//
 public class BigIntFunctions
@@ -95,11 +95,11 @@ public class BigIntFunctions
     }
 
     //checks if input is within the signed integer size limit
+    //only checks if Num is too large, not too small
     static public boolean InsideSizeLimit(BigInteger Num)
     {
         return (Num.compareTo(BigInteger.valueOf(Integer.MAX_VALUE)) <= 0);
     }
-    //todo: update for negative numbers
 
     //checks if input is outside the signed integer size limit
     static public boolean OutsideSizeLimit(BigInteger Num)
