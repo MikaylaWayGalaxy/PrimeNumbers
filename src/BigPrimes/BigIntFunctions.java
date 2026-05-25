@@ -52,34 +52,7 @@ public class BigIntFunctions
         return Product.mod(Mod);                        //return product after calculating mod
     }
 
-    //Modular Exponentiation
-    //Base^Exp % Modulus
-    //old version that uses recursion
-    //WARNING: may result in a stack overflow error if input is too large, use iterative version instead
-    static public BigInteger ModExpOld(BigInteger Base, BigInteger Exp, BigInteger Modulus)
-    {
-        //if Exp == 0, return 1
-        //Base^0 = 1
-        //escape condition for recursion
-        if (Exp.equals(BigInteger.ZERO))
-            return BigInteger.ONE;
 
-        //check if Exp is even or odd
-        //both reduce Exp and call recursively
-
-        //if Exp is even
-        //squaring a number and raising it to a half doesn't change the number
-        //Base^Exp = (Base^2)^(Exp/2)
-        //Base^Exp % Modulus = (Base^2 % Modulus)^(Exp/2) % Modulus
-        if (IsEven(Exp))
-            return ModExpOld(Base.pow(2).remainder(Modulus), Exp.divide(BigInteger.valueOf(2)), Modulus);
-
-        //if Exp is odd
-        //multiply by Base and reduce exponent by one
-        //Base^Exp = Base * Base^(Exp-1)
-        //Base^Exp % Modulus = Base * Base^(Exp-1) % Modulus
-        return (Base.multiply(ModExpOld(Base, Exp.subtract(BigInteger.valueOf(1)), Modulus))).remainder(Modulus);
-    }
 
     //returns an integer containing the value of input if input is small enough
     //returns MAX_INTEGER if input is too large
