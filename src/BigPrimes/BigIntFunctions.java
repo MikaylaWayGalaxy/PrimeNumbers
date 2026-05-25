@@ -5,7 +5,7 @@ import java.math.BigInteger;
 //***************************************************************************************************//
 // Pure static class that includes functions for BigInteger. Most importantly modular exponentiation //
 // which is used to check if a large number is prime.                                                //
-// Last edited 1-4-26                                                                                //
+// Last edited 5-24-26                                                                               //
 //***************************************************************************************************//
 public class BigIntFunctions
 {
