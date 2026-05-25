@@ -1,9 +1,12 @@
+package Main;
+
 import java.util.Scanner;
 import java.util.Random;
+import BigPrimes.*;
 
 //***************************************************************************************************//
 // Created by Mikayla Fulmer                                                                         //
-// Last edited 1-4-26                                                                                //
+// Last edited 5-24-26                                                                               //
 //                                                                                                   //
 // Large prime number generator based on PurpleMind's Youtube video.                                 //
 // https://www.youtube.com/watch?v=tBzaMfV94uA                                                       //

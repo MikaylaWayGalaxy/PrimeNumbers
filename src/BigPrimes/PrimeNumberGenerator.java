@@ -1,3 +1,5 @@
+package BigPrimes;
+
 import java.math.BigInteger;
 import static java.lang.Math.pow;
 
@@ -19,11 +21,11 @@ public class PrimeNumberGenerator
     //***********************************************************************************************//
     //                                             constructors                                      //
     //***********************************************************************************************//
-    PrimeNumberGenerator()
+    public PrimeNumberGenerator()
     {
         this.Number = BigInteger.ZERO;              //if no arguments, init to 0
     }
-    PrimeNumberGenerator(BigInteger Number)
+    public PrimeNumberGenerator(BigInteger Number)
     {
         this.Number = Number;
     }
